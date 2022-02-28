@@ -1,0 +1,10 @@
+/.git
+node_modules
+
+package.json
+yarn.lock
+
+storybook-static
+.github
+
+rush.json

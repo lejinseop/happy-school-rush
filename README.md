@@ -1,10 +1,14 @@
-## Rush monorepo 생성
+# Rush
+
+## 기본 가이드
+
+### Rush monorepo 생성
 
 1. npm install -g @microsoft/rush
 2. mkdir new-monorepo & cd new-monorepo
 3. rush init
 
-## 프로젝트 추가
+### 프로젝트 추가
 
 1. mkdir packages
 2. 프로젝트 생성(수동으로 만들어야함)
@@ -20,7 +24,7 @@
    ]
    ```
 
-## cra같은걸로 프로젝트 추가
+### cra같은걸로 프로젝트 추가
 
 1. /packages 경로에서 프로젝트 생성
    ```
@@ -38,7 +42,7 @@
    ]
    ```
 
-## Rush monorepo dependencies 설치
+### Rush monorepo dependencies 설치
 
 ```
 rush update
@@ -52,7 +56,7 @@ rush update시 하는 일
 4. common/temp/node_modules에 필요한 의존성 설치
 5. 각 프로젝트의 node_modules에 common/temp/node_modules의 symlink 생성
 
-## 프로젝트에 dependency 추가
+### 프로젝트에 dependency 추가
 
 1. dependency 추가가 필요한 프로젝트 경로에서
 2. rush add -p package-name@semver 사용
@@ -60,7 +64,7 @@ rush update시 하는 일
 
 node_modules에 제대로 install안되어있는 경우 root/common/temp/yarn-cache제거 및 rush update
 
-## package.json의 scripts 실행
+### package.json의 scripts 실행
 
 ```
 rushx [script name]
@@ -70,16 +74,16 @@ rushx [script name]
 // rushx dev
 ```
 
-## autoinstaller 추가
+### autoinstaller 추가
 
 rush install(update)시 설정되는 환경과 별개로 dependency가 설치되고 동작하도록 하기 위해 사용
 
 1. ~/root$ rush init-autoinstaller --name autoinstaller-name
 2. ~/root$ cd common/autoinstallers/autoinstaller-name
-3. yarn add dependencies...
+3. yarn add dependruencies...
 4. ~/autoinstaller-name$ rush update-autoinstaller --name autoinstaller-name
 
-## rush command 추가
+### rush command 추가
 
 rush custom command를 추가
 command/config/rush/command-line.json의 commands에 [guide](https://rushjs.io/pages/configs/command-line_json/)를 따라서 추가합니다.
@@ -112,3 +116,5 @@ Rush는 symbolic link를 이용하기때문에 Phantom dependencies를 파악하
 ### git hooks 기능 기본 제공
 
 husky같은걸 쓸 필요 없음.
+
+## 이상한거
