@@ -20,6 +20,23 @@
    ]
    ```
 
+## cra같은걸로 프로젝트 추가
+1. /packages 경로에서 프로젝트 생성
+   ```
+   npx create-react-app new-project --template typescript
+   ```
+2. package-lock.json, yarn.lock등 제거
+3. .gitignore, .gitattributes 등 제거
+4. rush.json에 추가한 프로젝트 정보 입력
+   ```
+   "projects": [
+     {
+       "packageName": "new-project-name",
+       "projectFolder": "packages/new-project-name"
+     }
+   ]
+   ```
+
 ## Rush monorepo dependencies 설치
 
 ```

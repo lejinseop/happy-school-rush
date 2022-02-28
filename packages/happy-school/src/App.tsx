@@ -8,7 +8,7 @@ import Pages from './pages';
 const App: FC = () => {
   return (
     <BrowserRouter>
-      <CssBaseline />
+      <CssBaseline />겨
       <React.Suspense fallback="Loading">
         <Pages />
       </React.Suspense>
