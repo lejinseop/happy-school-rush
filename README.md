@@ -1,7 +1,7 @@
 ## Rush monorepo 생성
 
 1. npm install -g @microsoft/rush
-2. mkdir new-monorepo & cd new-monorepo 
+2. mkdir new-monorepo & cd new-monorepo
 3. rush init
 
 ## 프로젝트 추가
@@ -21,6 +21,7 @@
    ```
 
 ## cra같은걸로 프로젝트 추가
+
 1. /packages 경로에서 프로젝트 생성
    ```
    npx create-react-app new-project --template typescript
@@ -44,6 +45,7 @@ rush update
 ```
 
 rush update시 하는 일
+
 1. common/config에 있는 설정이 업데이트 되었는지 확인
 2. 프로젝트별 package.json 파일과 common의 lock 파일이 유효한지 확인
 3. common의 lock파일이 다르면 패키지 매니저가 lock파일을 업데이트함
@@ -67,3 +69,46 @@ rushx [script name]
 // rushx start
 // rushx dev
 ```
+
+## autoinstaller 추가
+
+rush install(update)시 설정되는 환경과 별개로 dependency가 설치되고 동작하도록 하기 위해 사용
+
+1. ~/root$ rush init-autoinstaller --name autoinstaller-name
+2. ~/root$ cd common/autoinstallers/autoinstaller-name
+3. yarn add dependencies...
+4. ~/autoinstaller-name$ rush update-autoinstaller --name autoinstaller-name
+
+## rush command 추가
+
+rush custom command를 추가
+command/config/rush/command-line.json의 commands에 [guide](https://rushjs.io/pages/configs/command-line_json/)를 따라서 추가합니다.
+
+```
+{
+  ...
+  "commands": [
+    {
+      "name": "command-name",
+      "commandKind": "bulk" | "global" | "phase",
+      "summary": "summary",
+    }
+  ]
+  ...
+}
+```
+
+## git hooks 추가
+
+husky같이 git hook 이벤트를 추가할 수 있음. ([guide](https://rushjs.io/pages/maintainer/git_hooks/))
+
+## 특징
+
+### Phantom dependencies 제거
+
+Phantom dependencies는 package.json에 정의하지 않은 패키지를 프로젝트 내에서 import 해서 사용하는 경우.
+Rush는 symbolic link를 이용하기때문에 Phantom dependencies를 파악하고 제거할 수 있음.
+
+### git hooks 기능 기본 제공
+
+husky같은걸 쓸 필요 없음.
