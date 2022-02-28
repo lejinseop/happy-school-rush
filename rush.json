@@ -316,8 +316,8 @@
       "projectFolder": "packages/schedule-widget"
     },
     {
-      "packageName": "cafeteria-cra",
-      "projectFolder": "packages/cafeteria-cra"
+      "packageName": "cra-cafeteria",
+      "projectFolder": "packages/cra-cafeteria"
     }
     // {
     //   /**
