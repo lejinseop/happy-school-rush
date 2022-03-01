@@ -1,14 +1,14 @@
-import React from 'react';
-import type { FC } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { CssBaseline } from '@mui/material';
+import React from "react";
+import type { FC } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
 
-import Pages from './pages';
+import Pages from "./pages";
 
 const App: FC = () => {
   return (
     <BrowserRouter>
-      <CssBaseline />겨
+      <CssBaseline />
       <React.Suspense fallback="Loading">
         <Pages />
       </React.Suspense>
