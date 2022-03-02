@@ -2,12 +2,7 @@ import type { FC } from "react";
 import ScheduleWidget from "./ScheduleWidget";
 
 const App: FC = () => {
-  return (
-    <div>
-      Schedule Widget
-      <ScheduleWidget />
-    </div>
-  );
+  return <ScheduleWidget />;
 };
 
 export default App;

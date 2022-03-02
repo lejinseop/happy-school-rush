@@ -1,7 +1,7 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
 const ScheduleWidget: FC = () => {
-  return (<div>Schedule Widget</div>);
+  return <div>Schedule Widㄴget</div>;
 };
 
 export default ScheduleWidget;

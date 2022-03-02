@@ -51,6 +51,8 @@
    * This design avoids unnecessary churn in this file.
    */
   "allowedAlternativeVersions": {
+    "@emotion/react": ["11.8.0", "11.8.1", "11.7.1"],
+    "@emotion/styled": ["11.8.0", "11.8.1", "11.7.1", "11.6.0"]
     /**
      * For example, allow some projects to use an older TypeScript compiler
      * (in addition to whatever "usual" version is being used by other projects in the repo):

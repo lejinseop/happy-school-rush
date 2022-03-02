@@ -1,20 +1,12 @@
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reactasdasdasds
-        </a>
-      </header>
-    </div>
+    <>
+      Cafeteria
+      <ul>
+        <li>1. 커피</li>
+        <li>2. 우유</li>
+      </ul>
+    </>
   );
 }
 

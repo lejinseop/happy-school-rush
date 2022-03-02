@@ -56,13 +56,13 @@ rush update시 하는 일
 4. common/temp/node_modules에 필요한 의존성 설치
 5. 각 프로젝트의 node_modules에 common/temp/node_modules의 symlink 생성
 
-### 프로젝트에 dependency 추가
+### 프로젝트에 dependency 추가(버그있음)
 
 1. dependency 추가가 필요한 프로젝트 경로에서
 2. rush add -p package-name@semver 사용
 3. devDependencies인 경우 --dev 옵션 추가
 
-node_modules에 제대로 install안되어있는 경우 root/common/temp/yarn-cache제거 및 rush update
+node_modules에 제대로 install안되어있는 경우 `rush update --full --purge`
 
 ### package.json의 scripts 실행
 
@@ -118,3 +118,10 @@ Rush는 symbolic link를 이용하기때문에 Phantom dependencies를 파악하
 husky같은걸 쓸 필요 없음.
 
 ## 이상한거
+
+### yarn 사용시 rush add 로 의존성 추가하면 node_modules에 제대로 업데이트 X
+
+pnpm은 된다함; 근데 패키지가 없는 경우가 있을 수 있어서 사용x..
+rush update --full --purge를 해야하는데 이건 cache활용 안하고 모두 다시 install하는 기능..
+
+https://github.com/microsoft/rushstack/issues/1748
